@@ -1,0 +1,7 @@
+Lower(Users.groupusers)
+
+
+Set(Users,GroupUsersSPGroups.Run(EncodeUrl(Dropdown1.SelectedText.Value)));Set(IsVisible,If(User().FullName exactin Lower(Users.groupusers),true,false))
+
+
+If(IsVisible exactin ["true"],Navigate(SuccessPage,ScreenTransition.None),Notify("You are not the member of the group",NotificationType.Error))
